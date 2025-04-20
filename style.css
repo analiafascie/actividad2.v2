@@ -7,24 +7,15 @@
   
   /* === ESTRUCTURA BASE === */
   body {
-    font-family: "Poiret One", sans-serif;
-    background: linear-gradient(to bottom right, #fffaf0, #f9f2e5);
-    color: #005D92;
+    font-family: "Playfair", serif;
+    background-color: #ffffff;
+    color: #2c2b4e;
     line-height: 1.6;
     padding-top: 60px;
     padding-bottom: 80px;
   }
   
-  /* === MARCO GENERAL === */
-  .marco {
-    border: 4px dotted #005D92;
-    border-radius: 16px;
-    padding: 40px;
-    margin: 40px auto;
-    max-width: 1280px;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
+ 
   /* === NAVEGACIÓN === */
   .botonera {
     position: fixed;
@@ -34,16 +25,17 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    background-color: #faf5ec;
-    border-bottom: 1px solid #e0d6c6;
+    background-color: #2c2b4e;
     padding: 10px 0;
     z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   
   .boton {
-    color: #005D92;
-    font-size: 14px;
-    font-weight: 600;
+    color: #ffffff;
+    font-family: "Playfair", serif;
+    font-size: 12px;
+    font-weight: 400;
     text-decoration: none;
     transition: color 0.3s ease;
     cursor: pointer;
@@ -55,12 +47,11 @@
   
   /* === TÍTULOS === */
   h1 {
-    text-align: center;
-    font-family: "Poiret One", sans-serif;
-    letter-spacing: 2px;
-    font-size: 126px;
+    font-style: bold;
+    font-size: 122px;
     font-weight: 900;
-    margin: 80px 0 60px;
+    text-align: center;
+    margin: 0 0 10px;
   }
   
   h3 {
@@ -79,7 +70,7 @@
   
   /* === ENLACES === */
   a {
-    color: #005D92;
+    color: #2c2b4e;
     font-weight: 500;
     text-decoration: underline;
     transition: all 0.3s ease;
@@ -117,7 +108,7 @@
     margin-top: 4px;
     font-weight: 400;
     font-size: 16px;
-    color: #005D92;
+    color: #2c2b4e;
   }
   
   /* === GRILLA PRINCIPAL === */
@@ -153,16 +144,16 @@
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 16px;
-    background-color: #fffaf0;
+    background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
   
   .tabla-uvas th {
-    background-color: #f1f1f1;
-    color: #005D92;
-    text-align: left;
+    background-color: #eeeef8;
+    color: #2c2b4e;
+    text-align: center;
     padding: 12px 16px;
     font-weight: 600;
     font-size: 14px;
@@ -172,27 +163,28 @@
   
   .tabla-uvas td {
     padding: 14px 16px;
-    border-bottom: 1px solid #f8f5ed;
-    color: #005D92;
+    border-bottom: 1px solid #e5e7eb;
+    color: #2c2b4e;
     font-size: 16px;
     font-weight: 600;
+    text-align: center;
   }
   
   .tabla-uvas tr:nth-child(even) {
-    background-color: #f8f5ed;
+    background-color: #ffffff;
   }
   
   .tabla-uvas tr:hover {
-    background-color: #e7e2d9;
+    background-color: #e2dbf3;
   }
   
   .tabla-uvas a {
-    color: #005D92;
+    color: #2c2b4e;
     font-weight: 500;
   }
   
   .tabla-uvas a:hover {
-    color: #003f63;
+    color: #2c2b4e;
     text-decoration: underline;
     transition: 0.3s ease;
   }
@@ -204,7 +196,7 @@
     left: 0;
     width: 100%;
     padding: 10px;
-    background-color: #005D92;
+    background-color: #2c2b4e;
     font-family: 'Cutive Mono', monospace;
     text-align: center;
     color: #ffffff;
