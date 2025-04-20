@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diseño y Desarrollo Web</title>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Menú superior -->
+  <nav class="botonera">
+    <a href="#examenes" class="boton">EXÁMENES</a>
+    <a href="#uvas" class="boton">ACTIVIDADES</a>
+    <a href="#bibliografia" class="boton">BIBLIOGRAFÍA</a>
+  </nav>
+
+  <!-- Marco visual -->
+  <div class="marco">
+    <h1>Diseño y Desarrollo Web</h1>
+
+    <main class="contenedor-grid">
+      <!-- Exámenes -->
+      <section class="box examenes" id="examenes">
+        <h3>Fechas de exámenes</h3>
+        <ul class="fechas">
+          <li>
+            21/04 - 1er Examen Parcial
+            <ul class="temas">
+              <li>UVA 1</li>
+              <li>UVA 2</li>
+            </ul>
+          </li>
+          <li>
+            09/06 - 2do Examen Parcial
+            <ul class="temas">
+              <li>UVA 3</li>
+              <li>UVA 4</li>
+            </ul>
+          </li>
+          <li>30/06 - Examen Recuperatorio</li>
+          <li>14/07 - Examen Final Regular</li>
+        </ul>
+      </section>
+
+      <!-- Actividades -->
+      <section class="box actividades" id="uvas">
+        <h3>Actividades UVAs</h3>
+
+        <h4>UVA 1 - Introducción al desarrollo web</h4>
+        <table class="tabla-uvas">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Actividad</th>
+              <th>Repositorio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10/03</td>
+              <td><a href="https://analiafascie.github.io/actividad1/" target="_blank">Ejercicio Sobre Mí</a></td>
+              <td><a href="https://github.com/analiafascie/actividad1.git" target="_blank">Ver</a></td>
+            </tr>
+            <tr>
+              <td>17/03</td>
+              <td><a href="https://analiafascie.github.io/actividad2.v2/" target="_blank">HTML Etiquetas</a></td>
+              <td><a href="https://github.com/analiafascie/actividad2.v2.git" target="_blank">Ver</a></td>
+            </tr>
+            <tr>
+              <td>31/03</td>
+              <td><a href="https://analiafascie.github.io/actividad3/" target="_blank">Ejercicio Integrador</a></td>
+              <td><a href="https://github.com/analiafascie/actividad3.git" target="_blank">Ver</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>UVA 2 - Diseño de interfaz y experiencia de usuario</h4>
+        <table class="tabla-uvas">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Actividad</th>
+              <th>Repositorio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>07/04</td>
+              <td><a href="https://analiafascie.github.io/actividad4/" target="_blank">Formato de Texto</a></td>
+              <td><a href="https://github.com/analiafascie/actividad4.git" target="_blank">Ver</a></td>
+            </tr>
+            <tr>
+              <td>07/04</td>
+              <td><a href="https://analiafascie.github.io/actividad5/" target="_blank">Formato de Cajas</a></td>
+              <td><a href="https://github.com/analiafascie/actividad5.git" target="_blank">Ver</a></td>
+            </tr>
+            <tr>
+              <td>21/04</td>
+              <td><a href="https://analiafascie.github.io/actividad6/" target="_blank">Primer Parcial</a></td>
+              <td><a href="https://github.com/analiafascie/actividad6.git" target="_blank">Ver</a></td>
+            </tr>
+            <tr>
+              <td>21/04</td>
+              <td>Ejercicio Unidades de medida</td>
+              <td>Repositorio</td>
+            </tr>
+            <tr>
+              <td>21/04</td>
+              <td>Ejercicio Grid y Flexbox</td>
+              <td>Repositorio</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Bibliografía -->
+      <section class="box bibliografia" id="bibliografia">
+        <h3>Bibliografía</h3>
+        <ul>
+          <li><strong>UVA 1</strong> Introducción a la Web</li>
+          <li><strong>UVA 2</strong> CSS y diseño adaptable</li>
+          <li><strong>UVA 3</strong> JavaScript y jQuery</li>
+          <li><strong>UVA 4</strong> Publicación y hosting</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Curso 521046 || Profesora Patricia Litovicius
+    ➡️ <a href="https://www.uade.edu.ar/" target="_blank" class="footer-link">UADE</a>
+    ➡️ <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="footer-link">Webcampus</a>
+  </footer>
+
+</body>
+</html>

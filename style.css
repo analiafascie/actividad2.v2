@@ -1,0 +1,285 @@
+/* === RESET GENERAL === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* === ESTRUCTURA BASE === */
+  body {
+    font-family: "Poiret One", sans-serif;
+    background: linear-gradient(to bottom right, #fffaf0, #f9f2e5);
+    color: #005D92;
+    line-height: 1.6;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  
+  /* === MARCO GENERAL === */
+  .marco {
+    border: 4px dotted #005D92;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 1280px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* === NAVEGACIÓN === */
+  .botonera {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background-color: #faf5ec;
+    border-bottom: 1px solid #e0d6c6;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+  
+  .boton {
+    color: #005D92;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .boton:hover {
+    color: #360b0b5d;
+  }
+  
+  /* === TÍTULOS === */
+  h1 {
+    text-align: center;
+    font-family: "Poiret One", sans-serif;
+    letter-spacing: 2px;
+    font-size: 126px;
+    font-weight: 900;
+    margin: 80px 0 60px;
+  }
+  
+  h3 {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  h4 {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    margin: 32px 0 10px;
+  }
+  
+  /* === ENLACES === */
+  a {
+    color: #005D92;
+    font-weight: 500;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+  }
+  
+  a:hover {
+    color: #360b0b5d;
+  }
+  
+  /* === LISTAS === */
+  ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  ul ul {
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 6px;
+    font-size: 20px;
+    text-align: justify;
+  }
+  
+  .fechas > li {
+    font-weight: 600;
+    margin: 10px 0;
+    list-style-type: disc;
+  }
+  
+  .temas {
+    list-style-type: circle;
+    margin-left: 20px;
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #005D92;
+  }
+  
+  /* === GRILLA PRINCIPAL === */
+  .contenedor-grid {
+    display: grid;
+    max-width: 1200px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    gap: 40px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+  }
+  
+  .examenes {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  .actividades {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+  
+  .bibliografia {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  
+  /* === TABLAS DE ACTIVIDADES === */
+  .actividades .tabla-uvas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: #fffaf0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .tabla-uvas th {
+    background-color: #f1f1f1;
+    color: #005D92;
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .tabla-uvas td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f8f5ed;
+    color: #005D92;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .tabla-uvas tr:nth-child(even) {
+    background-color: #f8f5ed;
+  }
+  
+  .tabla-uvas tr:hover {
+    background-color: #e7e2d9;
+  }
+  
+  .tabla-uvas a {
+    color: #005D92;
+    font-weight: 500;
+  }
+  
+  .tabla-uvas a:hover {
+    color: #003f63;
+    text-decoration: underline;
+    transition: 0.3s ease;
+  }
+  
+  /* === FOOTER === */
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #005D92;
+    font-family: 'Cutive Mono', monospace;
+    text-align: center;
+    color: #ffffff;
+    font-size: 10px;
+    justify-content: space-between;
+  }
+  
+  .footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .footer-link:hover {
+    color: #ffffff;
+  }
+  
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .contenedor-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      padding: 20px;
+    }
+  
+    .examenes,
+    .bibliografia,
+    .actividades {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+  
+    .titulo {
+      font-size: 38px;
+      margin-top: 90px;
+    }
+  
+    h3 {
+      font-size: 18px;
+    }
+  
+    .box {
+      padding: 16px;
+    }
+  
+    .tabla-uvas {
+      font-size: 14px;
+    }
+  
+    .tabla-uvas th,
+    .tabla-uvas td {
+      padding: 10px 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .titulo {
+      font-size: 28px;
+    }
+  
+    .boton {
+      font-size: 12px;
+    }
+  
+    .contenedor-grid {
+      padding: 10px;
+    }
+  
+    .tabla-uvas {
+      font-size: 13px;
+    }
+  
+    .tabla-uvas th,
+    .tabla-uvas td {
+      padding: 8px 10px;
+    }
+  }
+  
