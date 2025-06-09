@@ -5,141 +5,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diseño y Desarrollo Web</title>
 
-  <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dark-blue': '#2c2b4e',
+            'light-lavender': '#e2dbf3',
+            'light-gray-bg': '#fafafa',
+            'border-gray': '#e5e7eb',
+            'table-header': '#eeeef8',
+            'dark-green': '#2b4e34', // Color de tu "cuadro" original, si lo necesitas
+          },
+          fontFamily: {
+            playfair: ['Playfair', 'serif'],
+            'cutive-mono': ['"Cutive Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="font-playfair text-dark-blue leading-relaxed relative z-0 bg-white min-h-screen flex flex-col">
+  <div class="fixed inset-0 bg-white bg-opacity-85 -z-10"></div>
 
-  <!-- Menú superior -->
-  <nav class="botonera">
-    <a href="#examenes" class="boton">examenes</a>
-    <a href="#uvas" class="boton">actividades</a>
-    <a href="#bibliografia" class="boton">bibliografia</a>
+  <div class="md:hidden fixed top-4 right-4 text-3xl text-white bg-dark-blue p-2 cursor-pointer z-50" onclick="toggleMenu()">☰</div>
+
+  <nav id="menu" class="fixed top-0 left-0 w-full flex-col md:flex-row justify-center items-center md:flex gap-4 md:gap-10 bg-dark-blue py-2 md:py-4 z-40 shadow-md md:shadow-lg hidden">
+    <a href="index.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">home</a>
+    <a href="avisos.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">avisos</a>
+    <a href="sobremi.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">sobre mí</a>
+    <a href="materias2025.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">materias 2025</a>
+    <a href="contacto.html" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2">contacto</a>
+    <a href="#examenes" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2 hidden md:block">Exámenes</a>
+    <a href="#uvas" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2 hidden md:block">Actividades</a>
+    <a href="#bibliografia" class="text-white text-base font-normal no-underline transition duration-300 hover:text-light-lavender px-4 py-2 hidden md:block">Bibliografía</a>
   </nav>
 
-  <!-- Marco visual -->
-  <div class="marco">
-    <h1>Diseño y Desarrollo Web</h1>
+  <div class="flex-grow max-w-[1400px] mx-auto w-full px-4 md:px-0 pt-24 md:pt-32 pb-8 md:pb-16">
+    <header class="mb-8">
+      <h1 class="italic text-5xl md:text-7xl lg:text-8xl font-extrabold text-left">Diseño y Desarrollo Web</h1>
+    </header>
 
-    <main class="contenedor-grid">
-      <!-- Exámenes -->
-      <section class="box examenes" id="examenes">
-        <h3>Fechas de exámenes</h3>
-        <ul class="fechas">
-          <li>
-            21/04 - 1er Examen Parcial
-            <ul class="temas">
-              <li>UVA 1</li>
-              <li>UVA 2</li>
-            </ul>
-          </li>
-          <li>
-            09/06 - 2do Examen Parcial
-            <ul class="temas">
-              <li>UVA 3</li>
-              <li>UVA 4</li>
-            </ul>
-          </li>
-          <li>30/06 - Examen Recuperatorio</li>
-          <li>14/07 - Examen Final Regular</li>
-        </ul>
+    <main>
+      <section class="mt-5 p-5 bg-light-gray-bg rounded-lg shadow-md mb-8" id="examenes">
+        <h3 class="text-2xl md:text-3xl font-normal mb-4">Fechas de exámenes</h3>
+        <div class="overflow-x-auto w-full mt-4 pb-2">
+          <table class="min-w-full bg-white rounded-lg shadow-sm border-collapse overflow-hidden">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Fecha</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Examen</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Temas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">21/04</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">1er Examen Parcial</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">UVA 1, UVA 2</td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">09/06</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">2do Examen Parcial</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">UVA 3, UVA 4</td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">30/06</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray" colspan="2">Examen Recuperatorio</td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">14/07</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray" colspan="2">Examen Final Regular</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
-      <!-- Actividades -->
-      <section class="box actividades" id="uvas">
-        <h3>Actividades UVAs</h3>
+      <section class="mt-5 p-5 bg-light-gray-bg rounded-lg shadow-md mb-8" id="uvas">
+        <h3 class="text-2xl md:text-3xl font-normal mb-4">Actividades UVAs</h3>
 
-        <h4>UVA 1 - Introducción al desarrollo web</h4>
-        <table class="tabla-uvas">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Actividad</th>
-              <th>Repositorio</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>10/03</td>
-              <td><a href="https://analiafascie.github.io/actividad1/" target="_blank">Ejercicio Sobre Mí</a></td>
-              <td><a href="https://github.com/analiafascie/actividad1.git" target="_blank">Ver</a></td>
-            </tr>
-            <tr>
-              <td>17/03</td>
-              <td><a href="https://analiafascie.github.io/actividad2.v2/" target="_blank">HTML Etiquetas</a></td>
-              <td><a href="https://github.com/analiafascie/actividad2.v2.git" target="_blank">Ver</a></td>
-            </tr>
-            <tr>
-              <td>31/03</td>
-              <td><a href="https://analiafascie.github.io/actividad3/" target="_blank">Ejercicio Integrador</a></td>
-              <td><a href="https://github.com/analiafascie/actividad3.git" target="_blank">Ver</a></td>
-            </tr>
-          </tbody>
-        </table>
+        <h4 class="text-lg md:text-xl font-normal mt-4 mb-2">UVA 1 - Introducción al desarrollo web</h4>
+        <div class="overflow-x-auto w-full mt-4 pb-2">
+          <table class="min-w-full bg-white rounded-lg shadow-sm border-collapse overflow-hidden">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Fecha</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Actividad</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Repositorio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">10/03</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://analiafascie.github.io/actividad1/" target="_blank" class="text-dark-blue hover:underline">Ejercicio Sobre Mí</a></td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://github.com/analiafascie/actividad1.git" target="_blank" class="text-dark-blue hover:underline">Ver</a></td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">17/03</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://analiafascie.github.io/actividad2.v2/" target="_blank" class="text-dark-blue hover:underline">HTML Etiquetas</a></td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://github.com/analiafascie/actividad2.v2.git" target="_blank" class="text-dark-blue hover:underline">Ver</a></td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">31/03</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://analiafascie.github.io/actividad3/" target="_blank" class="text-dark-blue hover:underline">Ejercicio Integrador</a></td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://github.com/analiafascie/actividad3.git" target="_blank" class="text-dark-blue hover:underline">Ver</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <h4>UVA 2 - Diseño de interfaz y experiencia de usuario</h4>
-        <table class="tabla-uvas">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Actividad</th>
-              <th>Repositorio</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>07/04</td>
-              <td><a href="https://analiafascie.github.io/actividad4/" target="_blank">Formato de Texto</a></td>
-              <td><a href="https://github.com/analiafascie/actividad4.git" target="_blank">Ver</a></td>
-            </tr>
-            <tr>
-              <td>07/04</td>
-              <td><a href="https://analiafascie.github.io/actividad5/" target="_blank">Formato de Cajas</a></td>
-              <td><a href="https://github.com/analiafascie/actividad5.git" target="_blank">Ver</a></td>
-            </tr>
-            <tr>
-              <td>21/04</td>
-              <td><a href="https://analiafascie.github.io/Primer_parcial/" target="_blank">Primer Parcial</a></td>
-              <td><a href="https://github.com/analiafascie/Primer_parcial.git" target="_blank">Ver</a></td>
-            </tr>
-            <tr>
-              <td>21/04</td>
-              <td><a href="https://analiafascie.github.io/actividad6/" target="_blank">Ejercicio Unidades de medida</a></td>
-              <td><a href="https://github.com/analiafascie/actividad6.git" target="_blank">Ver</a></td>
-            </tr>
-            <tr>
-              <td>21/04</td>
-              <td><a href="https://analiafascie.github.io/actividad7/" target="_blank"> Grid y Flexbox</a></td>
-              <td><a href="https://github.com/analiafascie/actividad7.git " target="_blank">Ver</a></td>
-            </tr>
-          </tbody>
-        </table>
+        <h4 class="text-lg md:text-xl font-normal mt-4 mb-2">UVA 2 - Diseño de interfaz y experiencia de usuario</h4>
+        <div class="overflow-x-auto w-full mt-4 pb-2">
+          <table class="min-w-full bg-white rounded-lg shadow-sm border-collapse overflow-hidden">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Fecha</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Actividad</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Repositorio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">07/04</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://analiafascie.github.io/actividad4/" target="_blank" class="text-dark-blue hover:underline">Formato de Texto</a></td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://github.com/analiafascie/actividad4.git" target="_blank" class="text-dark-blue hover:underline">Ver</a></td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">07/04</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://analiafascie.github.io/actividad5/" target="_blank" class="text-dark-blue hover:underline">Formato de Cajas</a></td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://github.com/analiafascie/actividad5.git" target="_blank" class="text-dark-blue hover:underline">Ver</a></td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">21/04</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://analiafascie.github.io/Primer_parcial/" target="_blank" class="text-dark-blue hover:underline">Primer Parcial</a></td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://github.com/analiafascie/Primer_parcial.git" target="_blank" class="text-dark-blue hover:underline">Ver</a></td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">21/04</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://analiafascie.github.io/actividad6/" target="_blank" class="text-dark-blue hover:underline">Ejercicio Unidades de medida</a></td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://github.com/analiafascie/actividad6.git" target="_blank" class="text-dark-blue hover:underline">Ver</a></td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">21/04</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://analiafascie.github.io/actividad7/" target="_blank" class="text-dark-blue hover:underline"> Grid y Flexbox</a></td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray"><a href="https://github.com/analiafascie/actividad7.git " target="_blank" class="text-dark-blue hover:underline">Ver</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
-      <!-- Bibliografía -->
-      <section class="box bibliografia" id="bibliografia">
-        <h3>Bibliografía</h3>
-        <ul>
-          <li><strong>UVA 1</strong> Introducción a la Web</li>
-          <li><strong>UVA 2</strong> CSS y diseño adaptable</li>
-          <li><strong>UVA 3</strong> JavaScript y jQuery</li>
-          <li><strong>UVA 4</strong> Publicación y hosting</li>
-        </ul>
+      <section class="mt-5 p-5 bg-light-gray-bg rounded-lg shadow-md mb-8" id="bibliografia">
+        <h3 class="text-2xl md:text-3xl font-normal mb-4">Bibliografía</h3>
+        <div class="overflow-x-auto w-full mt-4 pb-2">
+          <table class="min-w-full bg-white rounded-lg shadow-sm border-collapse overflow-hidden">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">UVA</th>
+                <th class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray bg-table-header font-semibold uppercase">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray font-medium">UVA 1</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">Introducción a la Web</td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray font-medium">UVA 2</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">CSS y diseño adaptable</td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray font-medium">UVA 3</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">JavaScript y jQuery</td>
+              </tr>
+              <tr class="even:bg-white hover:bg-light-lavender">
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray font-medium">UVA 4</td>
+                <td class="px-4 py-3 text-base md:text-lg whitespace-nowrap text-left border-b border-border-gray">Publicación y hosting</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
-  </div>
-
-  <!-- Footer -->
-  <footer>
+  </div> <footer class="fixed bottom-0 left-0 w-full py-2 bg-dark-blue font-cutive-mono text-center text-white text-xs shadow-md">
     Curso 521046 || Profesora Patricia Litovicius
-    ➡️ <a href="https://www.uade.edu.ar/" target="_blank" class="footer-link">UADE</a>
-    ➡️ <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="footer-link">Webcampus</a>
+    <a href="https://www.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️UADE</a>
+    <a href="https://www.webcampus.uade.edu.ar/" target="_blank" class="text-white no-underline ml-2 hover:text-purple-600">➡️Webcampus</a>
   </footer>
 
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("hidden");
+      menu.classList.toggle("flex");
+    }
+  </script>
 </body>
 </html>
